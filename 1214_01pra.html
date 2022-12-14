@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .aa {
+        height: 240px;
+    }
+
+    .box1 {
+        background-color: lightpink;
+        width: 600px;
+        height: 80px;
+    }
+
+    .box2 {
+        background-color: lightblue;
+        width: 600px;
+        height: 320px;
+        display: none;
+    }
+
+    div h3 {
+        text-align: center;
+        line-height: 80px;
+        font-size: 20px;
+    }
+    .blue{
+        color:#00e;
+    }
+</style>
+
+<body>
+    <div id="myH3">Hello JQuery</div>
+    <!-- <div class="aa">
+        <p data-price="100">1.elit. Quas, facilis.</p>
+        <p data-price="100">2.elit. Quas, facilis.</p>
+        <p data-price="100">3.elit. Quas, facilis.</p>
+        <p data-price="100">4.elit. Quas, facilis.</p>
+        <p data-price="100">5.elit. Quas, facilis.</p>
+    </div> -->
+
+
+    <div class="box1">
+        <h3>Test slide</h3>
+    </div>
+    <div class="box2">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore tenetur eveniet veniam perspiciatis
+        pariatur, ducimus deleniti distinctio voluptate laudantium voluptatum reprehenderit nihil vel voluptates
+        consectetur, minima nobis incidunt, quisquam quasi!
+        Id beatae, veritatis ex rem similique corporis sit dolor voluptate porro facere. Error voluptas repudiandae amet
+        facere eaque, officiis et unde porro praesentium, quidem numquam delectus quod asperiores, magni fuga?
+        Quibusdam dignissimos, eaque expedita voluptatibus dolorum quam tempore, nesciunt, atque provident hic
+        consequuntur officia exercitationem beatae laudantium facilis autem modi necessitatibus quia non dicta
+        doloremque quae suscipit? Cumque, quia hic?
+        Fuga, corrupti ullam excepturi quam minus consequatur nam vel dolorum, praesentium iusto, molestiae cumque
+        magnam! Inventore, atque obcaecati nisi, officia eligendi ex sed laudantium totam vel impedit fugiat omnis iure!
+        Veritatis nihil quasi vel rerum officia ab sit omnis, inventore ea esse asperiores temporibus officiis
+        consectetur, consequuntur dolore possimus repellendus! Cupiditate, maiores nostrum culpa reiciendis fugiat
+        deserunt et quidem ullam!
+        Excepturi aliquid molestias illum, dolore ratione facere tempora mollitia fugit sed perspiciatis impedit ipsum
+        nemo numquam accusamus quidem ad quia qui. Corporis, tempore accusamus tenetur consequuntur rerum blanditiis
+        officiis veritatis?
+    </div>
+    <br>
+    <button type="button" id="slideUpBtn">slideUpBtn</button>
+    <button type="button" id="slideDownBtn">slideDownBtn</button>
+    <button type="button" id="slideToggleBtn">slideToggleBtn</button>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(function () {//JQuery start :
+            // const myH3Js = document.getElementById('myH3');
+            // const myH3Jq=$('#myH3');
+            // $('#myH3').text('12345');//取代文字
+            // $('#myH3').css('color','red');//css ('屬性','值')
+            // myH3Js.textContent="123";
+            // console.log('myH3Jq',myH3Jq);
+            // console.log('myH3Js',myH3Js);
+            // $('p').click(function(){//點擊P 消失
+            //     $('this').hide();//單一
+            //     // $('p').hide();//全部
+            //     console.log('this',this);
+            //     console.log('$(thiis)',$(this));
+            // })
+            // const allP =document.querySelectorAll('p');
+            // console.log(allP);
+            // allP.array.forEach(element => {
+            //     element.addEventListener('click',function(){
+            //         this.hide();
+            //     })
+
+            // });
+            // $('button').click((value)=>{
+            //     console.log(value);
+            //     let num =0;
+            //     let x=0;
+            //     // $('p').last().hide();
+            //     // $('p').first('p').hide();//一次只消失一個，還在
+            //     // $('p').first('p').remove();//jQury.method JQery世界裡 盡量用此方法
+            //     // $('p:last').remove();//selector.method方式
+            //     $('p').eq(0).remove();
+            // });
+            //------------blur----focus-----聚焦與失焦----------------
+            //若使用箭頭函式，沒有this這個韓式
+            // $('input').odd().css('background-color','green');
+            // $('input').focus(function(){//focus 聚焦時發噌
+            //     // $('input').css('background-color','');//init all 取消//針對全部的input
+            //     $(this).css('background-color','red');//focus =>this red 點擊當下的
+            // });
+
+            // $('input').blur( function() {//失去焦點時發生
+            //     $(this).css('background-color','');
+            // });
+            //-*------------------------------------------
+
+            // $('#hideBtn').click(function(){
+            //     function sayHello(){
+            //         alery('hello jquery');
+            //     }
+            //     let itenNum=1;
+            //     $('p').hide(1000,function (){
+            //         // sayHello();
+            //         console.log('itenNum',itenNum);
+            //         itenNum++
+            //     });
+            //     // $('p').first('p').remove()
+            // })
+            // $('#showBtn').click(function(){ //callback.function
+            //     $('p').show(800);
+            //     // alert('ok');
+            // })
+            ///-------------淡入與淡出---------------------
+            // const allP = $('p');
+
+            // $('#hideBtn').on('click', function () {
+            //     allP.fadeIn(2000);//慢慢秀出
+            // })
+            // $('#showBtn').on('click', function () {
+            //     allP.fadeOut(800);//慢慢隱藏
+            // })
+            // $('#toggleBtn').on('click', function () {
+            //     allP.fadeToggle(800);
+            // })
+            // $('#toggleBtn').click(function(){
+            //     $('p').toggle();
+
+            // })
+            //---------滑動------滑動----------Slide------滑動---------
+            //diplay:none
+            // $('.box1').click(function(){
+            //     $('.box2').slidToggle();
+            // })
+            $('#slideUpBtn').click(function () {
+                $('.box2').slideUp();//收起
+            })
+            $('#slideDownBtn').click(function () {
+                // $('.box2').slideDown();
+                $('.box2').css('color','blue').slideDown(900).slideUp(900,function(){
+                    $('.box2').css('color', 'red');
+                }).slideDown(680).slideUp(680,function(){
+                    $('.box2').css('color', '#ff0');
+                }).slideDown(480).slideUp(480);
+            })
+            $('#slideToggleBtn').click(function () {
+                $('.box2').css('color', 'black').slideToggle();
+            })
+        });
+    </script>
+</body>
+
+</html>
