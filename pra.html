@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .aa {
+        height: 420px;
+    }
+
+    .box1 {
+        background-color: lightpink;
+        width: 600px;
+        height: 80px;
+        margin: auto;
+    }
+
+    .box2 {
+        background-color: lightblue;
+        width: 600px;
+        height: 320px;
+        margin: auto;
+    }
+    .button{
+        width: 800px;
+        margin: auto;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="aa">
+        <div class="box1"></div>
+            <div class="box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque officiis velit voluptate,
+                at
+                nulla blanditiis optio exercitationem in animi ipsum aliquid asperiores nesciunt excepturi voluptatum
+                similique perspiciatis ratione, placeat maxime. Quidem nulla veritatis quis eligendi commodi assumenda
+                aliquam saepe magni placeat. Illum, in doloribus enim ex voluptas vero quam sapiente debitis neque
+                deserunt
+                perferendis sequi error consequuntur sit minus quia!</div>
+            <br>
+    </div>
+    <div class="button">
+        <button type="button" id="hide">hide</button>
+        <button type="button" id="show">show</button>
+        <button type="button" id="toggle">toggle</button>
+        &nbsp;&nbsp;
+        <button type="button" id="fadeout">fadeout</button>
+        <button type="button" id="fadein">fadein</button>
+        <button type="button" id="fadetoggle">fadetoggle</button>
+        &nbsp;&nbsp;
+        <button type="button" id="slideout">slideDown</button>
+        <button type="button" id="slidein">slideUp</button>
+        <button type="button" id="slidetoggle">slideToggle</button>
+        <button type="button" id="slideDownBtn">updown</button>
+
+      
+    </div>
+
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+            integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+            </script>
+        <script>
+            $(function () {
+            //------------hide----show---toggle------
+                $('#hide').click(function () {
+                    $('.box2').hide();
+                })
+                $('#show').click(function () {
+                    $('.box2').show();
+                })
+                $('#toggle').click(function () {
+                    $('.box2').toggle();
+                })
+            //-----------fade----------------------
+            $('#fadeout').click(function () {
+                    $('.box2').fadeOut(800);
+                })
+            $('#fadein').click(function () {
+                    $('.box2').fadeIn(1800);
+                })
+            $('#fadetoggle').click(function () {
+                $('.box2').fadeToggle(1800);
+            })
+            //-------slide-------------
+            $('#slideout').click(function () {
+                    $('.box2').slideDown(800);
+                })
+            $('#slidein').click(function () {
+                    $('.box2').slideUp(1800);
+                })
+            $('#slidetoggle').click(function () {
+                $('.box2').slideToggle(1800);
+            })
+
+            $('#slideDownBtn').click(function () {
+                // $('.box2').slideDown();
+                $('.box2').css('color','blue').slideDown(900).slideUp(900,function(){
+                    $('.box2').css('color', 'red');
+                }).slideDown(680).slideUp(680,function(){
+                    $('.box2').css('color', '#ff0');
+                }).slideDown(480).slideUp(480);
+            })
+
+
+            });
+//練習selecct
+//1.hide show toggle
+//2.fadein fadeout fadetoggle
+//3.slideup slidedown slidetoggle
+//box1
+//box2
+
+
+        </script>
+</body>
+
+</html>
