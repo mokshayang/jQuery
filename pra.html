@@ -34,7 +34,7 @@
 
 <body>
     <div class="aa">
-        <div class="box1"></div>
+        <div class="box1">box 1</div>
             <div class="box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque officiis velit voluptate,
                 at
                 nulla blanditiis optio exercitationem in animi ipsum aliquid asperiores nesciunt excepturi voluptatum
@@ -56,11 +56,15 @@
         <button type="button" id="slideout">slideDown</button>
         <button type="button" id="slidein">slideUp</button>
         <button type="button" id="slidetoggle">slideToggle</button>
-        <button type="button" id="slideDownBtn">updown</button>
+        <button type="button" id="slideDownBtn">callback !</button>
 
       
     </div>
-
+    <select name="" id="">
+        <option value="1">hide</option>
+        <option value="2">fade</option>
+        <option value="3">slide</option>
+    </select>
 
 
 
@@ -81,7 +85,7 @@
                 $('#toggle').click(function () {
                     $('.box2').toggle();
                 })
-            //-----------fade----------------------
+            //-----------fadeIn--------fadeOut------fadeToggle--------
             $('#fadeout').click(function () {
                     $('.box2').fadeOut(800);
                 })
@@ -91,7 +95,7 @@
             $('#fadetoggle').click(function () {
                 $('.box2').fadeToggle(1800);
             })
-            //-------slide-------------
+            //-------slideDown-------slideUp------slideToggle---------
             $('#slideout').click(function () {
                     $('.box2').slideDown(800);
                 })
@@ -101,7 +105,7 @@
             $('#slidetoggle').click(function () {
                 $('.box2').slideToggle(1800);
             })
-
+            //-------callbackfunction---------
             $('#slideDownBtn').click(function () {
                 // $('.box2').slideDown();
                 $('.box2').css('color','blue').slideDown(900).slideUp(900,function(){
@@ -110,6 +114,26 @@
                     $('.box2').css('color', '#ff0');
                 }).slideDown(480).slideUp(480);
             })
+            const box2=$('.box2');
+$('.box1').click(function(){
+    console.log('box1 OK');
+    let getSelectVal=($('select').val());//date tyleof str
+    console.log('getSelectVal',getSelectVal);
+    switch (getSelectVal) {
+        case '1':
+            box2.toggle();
+            bread;
+        case '2':
+        box2.fadeToggle();
+            bread;
+        case '3':
+        box2.slideToggle();
+            bread;
+            default:
+                break;
+    }
+})
+
 
 
             });
