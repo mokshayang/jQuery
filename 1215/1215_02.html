@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>同一個按鈕</title>
+    <style>
+        /* .test{
+            font-size: 60px;
+            color: #f00;
+            text-shadow: 1px 1px 1px #000;
+            font-weight: bold;
+        } */
+        .green{
+            font-size: 60px;
+            color: #0f0;
+            text-shadow: 1px 1px 1px #000;
+            font-weight: bold;
+        }
+        .red{
+            font-size: 60px;
+            color: #f00;
+            text-shadow: 1px 1px 1px #000;
+            font-weight: bold;
+        }
+        .yellow{
+            font-size: 60px;
+            text-shadow: 1px 1px 1px #000;
+            color: #ff0;
+            font-weight: bold;
+        }
+        .blue{
+            font-size: 60px;
+            text-shadow: 1px 1px 1px #000;
+            color: #00f;
+            font-weight: bold;
+            
+        }
+    </style>
+</head>
+
+<body>
+<button type="button" class="myBtn">myBtn</button>    
+<p class="test">test</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
+    <script>
+$(function () {
+    const myBtn=$('.myBtn');
+    const colorArr=['red','yellow','green','blue'];//將css的名稱裝入
+    console.log(colorArr);
+    console.log('colorArr[0]',colorArr[0]);
+    console.log('colorArr[1]',colorArr[1]);
+    console.log('colorArr[2]',colorArr[2]);
+    let num = 0;
+    num ++;
+    checkNum = num % colorArr.length;
+    console.log('checkNum',checkNum);
+
+    // let isRed=true;
+    myBtn.click(function(){
+        num ++;
+        checkNum = num % colorArr.length;
+        console.log('checkNum',checkNum);
+        $('p').attr('class',`${colorArr[checkNum]}`);
+        console.log(`${colorArr[checkNum]}`);
+        // console.log(isRed);
+        // if(isRed){
+        //     $('p').attr('class','green');
+        //     isRed= false;
+        // }else{
+        //     $('p').attr('class','red');
+        //     isRed= true;
+        // }
+        // switch(num) {
+        //     case 0:
+        //     $('p').attr('class',`${colorArr[0]}`);
+        //     num=1;
+        //     break;
+        //     case 1:
+        //     $('p').attr('class',`${colorArr[1]}`);
+        //     num=2;
+        //     break;
+        //     case 2:
+        //     $('p').attr('class',`${colorArr[2]}`);
+        //     num=0;
+        //     break;
+        //     default:
+        //     num=1;
+        //     $('p').attr('class',`${colorArr[0]}`);
+        //     break;
+        // }
+    })
+
+
+
+
+
+});
+    </script>
+</body>
+
+</html>
