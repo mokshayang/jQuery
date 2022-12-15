@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ</title>
+    <style>
+        .box1{
+            height: 80px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            justify-items: center;
+            align-items:center;
+            background-color: #ccf;
+
+        }
+        .box1 button{
+            /* border: 1px solid #ccf; */
+            /* border-radius: 5px; */
+            width: 100px;
+            height: 40px;
+            font-size: 18px;
+            cursor:pointer;
+        }
+        .box2{
+            display: none;
+            height: 300px;
+            background-color: #99f;
+            overflow: scroll;
+        }
+        .box2>p{
+            display: none;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <button class="myBtn" type="button" id="tab1" data-text="data-p1" data-55688="123123" data-bbc="oop">tab1</button>
+        <button class="myBtn" type="button" id="tab2" data-text="data-p2">tab2</button>
+        <button class="myBtn" type="button" id="tab3" data-text="data-p3">tab3</button>
+        <button class="myBtn" type="button" id="tab4" data-text="data-p4">tab4</button>
+    </div>
+
+    <div class="box2">
+            <p id="data-p1">
+                <img src="https://picsum.photos/id/1/200/200" alt="" width="100px">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia laboriosam harum natus quia fuga ex sed repudiandae. Voluptatibus aperiam voluptate consectetur fuga, eligendi cum atque eaque consequatur itaque, ipsum quas?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia laboriosam harum natus quia fuga ex sed repudiandae. Voluptatibus aperiam voluptate consectetur fuga, eligendi cum atque eaque consequatur itaque, ipsum quas?
+            </p>
+            <p id="data-p2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia laboriosam harum natus quia fuga ex sed repudiandae. Voluptatibus aperiam voluptate consectetur fuga, eligendi cum atque eaque consequatur itaque, ipsum quas?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia laboriosam harum natus quia fuga ex sed repudiandae. Voluptatibus aperiam voluptate consectetur fuga, eligendi cum atque eaque consequatur itaque, ipsum quas?
+            </p>
+            <p id="data-p3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia laboriosam harum natus quia fuga ex sed repudiandae. Voluptatibus aperiam voluptate consectetur fuga, eligendi cum atque eaque consequatur itaque, ipsum quas?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia laboriosam harum natus quia fuga ex sed repudiandae. Voluptatibus aperiam voluptate consectetur fuga, eligendi cum atque eaque consequatur itaque, ipsum quas?
+            </p>
+            <p id="data-p4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia laboriosam harum natus quia fuga ex sed repudiandae. Voluptatibus aperiam voluptate consectetur fuga, eligendi cum atque eaque consequatur itaque, ipsum quas?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia laboriosam harum natus quia fuga ex sed repudiandae. Voluptatibus aperiam voluptate consectetur fuga, eligendi cum atque eaque consequatur itaque, ipsum quas?
+            </p>
+
+
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+    integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
+    <script>
+        $(function () {
+            //綁定
+            const tab1=$('#tab1'), tab2=$('#tab2'), tab3=$('#tab3'), tab4=$('#tab4');
+            const box2=$('.box2');
+            const allP=$('.box2>p');
+            const myBtn=$('.myBtn');
+
+            let getTab1Date =tab1.data();
+            console.log('getTab1Data',getTab1Date);
+            myBtn.click(function(){
+                let getData=$(this).data('text');//p.data-:{name}="value"
+                //只有function 才有(this) 箭頭符號
+                console.log('getData',getData);//{name : value }
+                box2.toggle(1000,function(){
+                    $(`#${getData}`).slideToggle(1200);
+                    console.log('getData',getData);
+
+                });
+                allP.hide();
+            })
+            // tab1.click(function(){
+            //     box2.toggle();
+                
+            //     allP.hide();
+            // })
+
+
+
+
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>
