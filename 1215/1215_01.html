@@ -39,6 +39,7 @@
 
 <body>
     <div class="box1">
+        <!-- add data-[name]="value" 新建隱藏資料-->
         <button class="myBtn" type="button" id="tab1" data-text="data-p1" data-55688="123123" data-bbc="oop">tab1</button>
         <button class="myBtn" type="button" id="tab2" data-text="data-p2">tab2</button>
         <button class="myBtn" type="button" id="tab3" data-text="data-p3">tab3</button>
@@ -82,13 +83,13 @@
             const allP=$('.box2>p');
             const myBtn=$('.myBtn');
 
-            let getTab1Date =tab1.data();
+            let getTab1Date =tab1.data();//第一個 button 的 data
             console.log('getTab1Data',getTab1Date);
-            myBtn.click(function(){
+            myBtn.click(function(){//myBtn contant $(this) 當下的點擊方式
                 let getData=$(this).data('text');//p.data-:{name}="value"
                 //只有function 才有(this) 箭頭符號
                 console.log('getData',getData);//{name : value }
-                box2.toggle(1000,function(){
+                box2.toggle(1000,function(){//callback function
                     $(`#${getData}`).slideToggle(1200);
                     console.log('getData',getData);
 
