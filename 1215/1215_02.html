@@ -43,7 +43,11 @@
 
 <body>
 <button type="button" class="myBtn">myBtn</button>    
-<p class="test">test</p>
+<p class="test1">test111</p>
+<p class="test2">test222</p>
+<p class="test3">test333</p>
+<p class="test4">test444</p>
+<p class="test5">test555</p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
 integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
 crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -56,18 +60,19 @@ $(function () {
     console.log('colorArr[0]',colorArr[0]);
     console.log('colorArr[1]',colorArr[1]);
     console.log('colorArr[2]',colorArr[2]);
+    console.log('colorArr[3]',colorArr[3]);
     let num = 0;
-    num ++;
-    checkNum = num % colorArr.length;
-    console.log('checkNum',checkNum);
-
     // let isRed=true;
     myBtn.click(function(){
         num ++;
-        checkNum = num % colorArr.length;
-        console.log('checkNum',checkNum);
-        $('p').attr('class',`${colorArr[checkNum]}`);
-        console.log(`${colorArr[checkNum]}`);
+        let checkNum = num % colorArr.length;//colorArr.length = 4
+        // console.log('colorArr.length',colorArr.length);
+        // console.log('checkNum',checkNum);
+        // console.log(`${colorArr[checkNum]}`);
+        let randomNum=Math.floor(Math.random()*(colorArr.length - 1));//隨機random
+        // console.log('randomNum',randomNum);
+        $('p').attr('class',colorArr[randomNum]);
+        // $('p').attr('class',`${colorArr[checkNum]}`);
         // console.log(isRed);
         // if(isRed){
         //     $('p').attr('class','green');
@@ -95,6 +100,25 @@ $(function () {
         //     break;
         // }
     })
+
+        const allP =$('p');
+        console.log('allP',allP);
+        $.each(allP, function (key, value) { 
+             console.log(key);
+             console.log(value);
+            //  console.log(this);//js
+             console.log($(this));//jq obj
+        });
+
+        console.log('allP type2',allP);
+        allP.each(function (key, value) { 
+             console.log(key);
+             console.log(value);
+            //  console.log(this);//js
+            //  console.log($(this));//jq obj
+             let numSort=key+1;
+             $(this).text(numSort);
+        });
 
 
 
