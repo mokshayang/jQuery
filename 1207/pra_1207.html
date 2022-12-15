@@ -1,0 +1,47 @@
+<button type="button" id="myBtn">myBtn</button>
+<button type="button" id="myBtn2">myBtn2</button>
+<button type="button" id="myBtn3">myBtn3</button>
+<button type="button" id="myBtn4">myBtn4</button>
+<br><br>
+<div id="demo"></div>
+<script>
+
+    myBtn.addEventListener("click",myfunction);//
+    function myfunction(){//蓋印章的方法
+        document.getElementById("demo").innerHTML="Helle World 111";
+    }
+    function myfunction4(){//蓋印章的方法
+        document.getElementById("demo").innerHTML="Helle World 444";
+    }
+    
+        myBtn2.addEventListener("click",function(){;
+        document.getElementById("demo").innerHTML="Helle World 222";
+    })
+        myBtn3.addEventListener("click",() =>{;
+        document.getElementById("demo").innerHTML="Helle World 333";
+    })
+    myBtn4.addEventListener(hellocClick(),myfunction4);
+    function hellocClick(){
+        return "click";
+    }
+    //mothen 5
+    let funVal=function funValFunction(){
+        console.log('funValFunction');
+    }
+    console.log('funVal',funVal);
+    funVal();
+    //mothen 6 採用箭頭函式
+    let funVa2= ()=>{
+        console.log('funValFunction');
+    }
+    console.log('funVal2',funVa2);
+    funVa2();
+    //myFun 代表整個function
+    //myfun()  呼叫 function
+
+    // let myArr =['amy','bob','cat','dog','egg'];
+    //     myArr.forEach((value, index)=>{
+    //     console.log(index+"=>"+value);
+    //     console.log(value);
+    // })
+</script>

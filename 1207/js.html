@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js class foreach</title>
+</head>
+<body>
+    <h3>js class foreach</h3>
+    <button class="myBtn" type="button" id="myBtnID">myBtn1</button>
+    <button class="myBtn" type="button">myBtn2</button>
+    <button class="myBtn" type="button">myBtn3</button>
+    <button class="myBtn" type="button">myBtn4</button>
+    <button class="myBtn" type="button">myBtn5</button>
+    <button class="myBtn" type="button">myBtn6</button>
+    <script>
+        //get class
+        //Array.from(將變數轉為array)
+        // const myBtn = document.getElementsByClassName('myBtn');
+        // console.log(myBtn);
+        // console.log('myBtn typeof',typeof(myBtn));
+        // console.log('myBtn Array.isArray',Array.isArray(myBtn));
+        //將Btn 轉為 Array
+        // Array.from(myBtn).forEach(element => {
+        //     console.log(element);
+        // });
+        // Array.from(myBtn).forEach((value,key) => {
+        //     // console.log(value);
+        //     // console.log('this',this);
+        //     if(key < 3){
+        //         value.style.color='red';
+        //     }
+        //     value.addEventListener('click',function(){
+        //         this.style.color='blue';
+        //     })
+        // });
+        //for.array[key] == forEach.value
+        //for or forEach 都可以 
+        //forEach 優點 可直接取得value and key
+        // for (let i =0 ; i<myBtn.length; i++) {
+        //     console.log(`nyBtn${i}`,myBtn[i]);
+        // }
+            const myBtnID=document.querySelector('#myBtnID');
+            const myBtn=document.querySelectorAll('.myBtn');// nodeList可支援forEach
+            //console.log('myBtnID',myBtnID);
+            // console.log('myBtn',myBtn);
+            myBtnID.style.color='blue';
+            console.log('',);
+            console.log('myBtn array isarray',Array.isArray(myBtn));//false
+            //但是myBtn可接受forEach 
+            //這邊的myBtn是由document.querySelectorAll ，卻可以接受陣列myBtn.forEach
+            //上面的myBtn = document.getElementsByClassName,缺需要轉型為陣列  Array.from(myBtn).forEach((value,key)
+            //document.querySelectorAll && document.getElementsByClassName : typeof Array =>false
+
+            myBtn.forEach(function(value) {
+                console.log(value);
+            });
+
+    </script>
+</body>
+</html>

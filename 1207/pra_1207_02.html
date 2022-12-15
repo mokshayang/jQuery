@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let bonusArr = [5,100,6,8,20];
+        let sumValue = 100;
+        bonusArr.forEach((value, key)=>{
+            sumValue += value;
+        })
+        console.log(sumValue);
+        let filterArr=[];
+        bonusArr.forEach((value, key)=>{
+            if(value>10){
+                filterArr.push(value);
+            }
+        })
+        console.log('filterArr',filterArr);
+        //檢驗判斷 : 
+        let studentArr=['amy','boc','cat'];
+        let gitKey=studentArr.indexOf('cat');
+        console.log('gitKey',gitKey);
+    </script>
+    
+</body>
+</html>

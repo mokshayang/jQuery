@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //php 
+        //indexArr=[1,2,3,4,5,]
+        //asscoArr =[
+        //  's1' => 'amy',
+        //  's2' => 'bob',
+        //  's3' => 'cat'
+        //]
+
+        // js
+        // array = [1,2,3,4,5,];
+        // object
+        let myObj={
+            's1' : 'amy',
+            's2' : 'bob',
+            's3' : 'cat'
+        }
+        // console.log('myObj',myObj);
+        let myPhone = {
+            'AppleiPhone14' : 28000,
+            'AppleiPhone13' : 16000,
+            'AppleiPhone12' : 26000,
+            'AppleiPhone11' : 13000,
+            'AppleiPhone10' : 6000
+        }
+        // console.log('myPhone',myPhone);
+
+        let mobileArr =[//array 包 { }，{內需有Key}
+            {
+                'name' : 'iPhone14',
+                'price' : '32000',
+                'location' : ['北','中','南']
+            },
+            {
+                'name' : 'iPhone13',
+                'price' : '30000',
+                'location' : ['北','中','南']
+            },
+            {
+                'name' : 'iPhone12',
+                'price' : '28000',
+                'location' : ['北','中','南']
+            },
+            {
+                'name' : 'iPhone11',
+                'price' : '24000',
+                'location' : ['北','中','南']
+            }
+        ];
+        // let sum = 0 ;
+        // mobileArr.forEach((value, key)=>{
+        //     console.log(`${key}=>`,value);
+        //     console.log('value.price',value.price);
+        //     sum+=value.price;
+        // })
+
+        let myObj2 = //obj 內可以有 array 若要{{ }}， 需要KEY值
+        {
+    'obj1' :{
+                'name' : 'iPhone14',
+                'price' : '32000',
+                'location' : ['北','中','南']
+            },
+    'obj2' :{
+                'name' : 'iPhone13',
+                'price' : '30000',
+                'location' : ['北','中','南']
+            },
+    'obj3' :{
+                'name' : 'iPhone12',
+                'price' : '28000',
+                'location' : ['北','中','南']
+            },
+    'obj4' :{
+                'name' : 'iPhone11',
+                'price' : '24000',
+                'location' : ['北','中','南']
+            }
+        };
+    // console.log('myObj2',myObj2);
+    // console.log('myObj2',myObj2.obj3);
+    //student.name     // object 表式
+    //student->name    // 其他的程式語言
+    //student['name']  // array 
+
+
+    let obj={
+        //變數 property
+        'name' : '小明' ,
+        'age' : '18' ,
+        'location' : {'key':'value test'} ,
+        //方法 method
+        //只有 obj function this 指定上一層 obj
+        'hellloFun' : function(){
+            console.log('this',this);
+            console.log('this.name',this.name);//裡面this 代表 obj 全體 
+            console.log('obj.name',obj.name);//可能會抓到別的obj
+            let str =`Hello 我是${this.name} 今年${this.age}歲 ${this.location.key}`;
+            console.log(str);
+        },
+        //arrow 箭頭函式的this 會有問題喔，會指向 外部的window !!
+        'sleepFun' : () =>{
+            // console.log('sleep...');
+            console.log('arrow this',this);
+        }
+    }
+    console.log('obj',obj);
+    // obj.name;
+    console.log('obj.name',obj.name);
+    // obj.age;
+    console.log('obj.age',obj.age);
+    obj.hellloFun()
+
+    </script>
+</body>
+</html>

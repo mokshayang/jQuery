@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Property obj.key  or  obj['key']
+        // method  obj.myFun
+        // =>(function) this 指向 windows
+        // 
+        let studentObj = {
+            'name' : 'amy',
+            'age' : '18',
+            'chinese' : 70,
+            'english' : 80,
+            'math' : 90,
+            'sumFun' : function(){
+                let sum = this.chinese +this.english + this.math;
+                console.log("sum =>",sum);
+                return sum;
+            },
+            'avgFun':function(){
+                let result = this.sumFun();
+                let avg =(result / 3) ;
+                console.log('${result}/3 =>',avg);
+            },
+            // console.log('studentObj',studentObj);
+            
+        }
+        console.log('studentObj',studentObj);
+        console.log('studentObj.avgFun',studentObj.avgFun);
+        
+
+        let sum = 0;
+        mobileArr=[
+            
+        ];
+    </script>
+</body>
+</html>

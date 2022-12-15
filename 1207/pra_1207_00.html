@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array_pra</title>
+</head>
+<body>
+    
+    <script>
+        //  map();reduce();filter();
+
+        // 公司發年終
+        // employee=[3,4,5,6,];
+        // ex1. 發兩個月總共要發多少 
+        // ex2. 每個人都發兩個月 但領五萬的是傑出員工 4個 總共要發多少
+
+        // map()，會透過函式內所回傳的值組合成一個新的陣列
+        // 並不會改變原陣列，回傳數量會等於原始陣列的長度
+        let employeeArr=[3,4,5,6,];
+        let employeeBonusArr = employeeArr.map((value,key)=>{
+          if(value==5){
+            return value*4;
+          }else{
+            return value*2;
+          } 
+        })
+         console.log(employeeBonusArr);//  [6,8,20,12]
+
+
+        // reduce 加總
+        // reduce 方法跟其他陣列方法（例如：map、filter）的差別是
+        // 它會 return 一個值，而不是一個新陣列
+        // total initValue 最原始的值
+        // 經由個別 value 加總的累計值
+
+        // value currentValue // Array 的個別 item
+        // let i=0;
+        // let sum =employeeArr.reduce((total,value)=>{
+        //     i++;
+        //     console.log("i",i);
+        //     console.log("total",total);
+        //     console.log("value",value);
+        //     return total+value;
+        // })
+        // console.log('sum',sum); //sum 18
+
+        // filter
+        // 將經指定的函式運算後，由原陣列中通過該函式檢驗的元素
+        // 回傳一個新陣列。
+        // 回傳新陣列，原陣列不改變
+        // let employeeArrFiler = employeeArr.filter(value=>{
+        //     return value < 5;
+        // })
+        // console.log('employeeArr',employeeArr);//[3,4,5,6]
+        // console.log('employeeArrFiler',employeeArrFiler);//[3,4]
+        employeeArr=[3,4,5,6];
+        let sumValue = 0; //宣告變數時，並賦予初始值
+
+        let sum = employeeArr.forEach((value,key) =>{
+            sumValue += value;//sumValue = sumValue + value
+        })
+        // console.log(sumValue);
+    </script>
+</body>
+</html>
