@@ -65,9 +65,12 @@ $(function(){
 //只知道校長 
 //要找老師
 const head = $('div');
-const teacher = head.find('ul');
+//find('選擇器') 往下找一層 
+const teacher = head.find('li');
+//children找下一層
+// const teacher = head.children().children();//head.ul.li
 // teacher.css('background-color','lightpink');
-teacher.eq(1).css('background-color','lightpink');
+teacher.css('background-color','lightpink');
     
 });
 
