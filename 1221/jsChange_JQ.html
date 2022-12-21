@@ -112,6 +112,8 @@
             // const myCount = $('.my-count');
             // const myTotal = $('.my-total');
         $(function () {
+       
+
 
             function sum() {
                 // 1. 抓到每個total
@@ -128,7 +130,7 @@
                     console.log('key',key);
                     console.log('value',value);
                     console.log('this',this); //  // ===value         
-                    console.log('$(this)',$(this));
+                    console.log('$(this).children()',$(this).children());
                     sum += getTotal;
                     //1 + 2 + 3 + = 6
                     //lenght-1 >key
@@ -217,10 +219,17 @@
                 sum();
             });
 
+            function changeTr(data) {
+                console.log('changeTr ok');
+                console.log(data);
+                $(data).css('color', 'blue');
+            }
+
             myCount.change(function () {
                 myCount.css('color', '');
                 $(this).css('color', 'red');
                 changeFun();
+                changeTr(this);
             });
 
             changeFun();//一開始執行一次

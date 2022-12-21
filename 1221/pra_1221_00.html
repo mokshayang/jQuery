@@ -64,13 +64,23 @@ $(function(){
 
 //只知道校長 
 //要找老師
-const head = $('div');
+// const head = $('div');
 //find('選擇器') 往下找一層 
-const teacher = head.find('li');
+// const teacher = head.find('li');
 //children找下一層
 // const teacher = head.children().children();//head.ul.li
 // teacher.css('background-color','lightpink');
-teacher.css('background-color','lightpink');
+// teacher.css('background-color','lightpink');
+
+//父類別選擇器
+const students = $('li');
+const studentParent=students.first().parent();
+const studentParentParent=students.first().parent().parent();
+console.log('students',students);//li
+console.log('studentParent',studentParent);//ul
+console.log('studentParentParent',studentParentParent);//div
+
+
     
 });
 
