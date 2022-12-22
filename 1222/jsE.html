@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="myButton">Click me</button>
+    <script>
+        const button = document.querySelector('#myButton');
+        button.addEventListener('click', handleClick);
+        function handleClick(test) {
+            // 在這裡使用 e 來取得有關事件的資訊
+            // console.log(e);
+            console.log(test.type); // 印出 "click"
+            console.log(test.target); // 印出按鈕本身
+            console.log(test.clientX); // 印出點擊位置的水平座標
+            console.log(test.clientY); // 印出點擊位置的垂直座標
+        }
+    </script>
+</body>
+
+</html>
